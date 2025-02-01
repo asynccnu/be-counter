@@ -1,0 +1,23 @@
+grpc:
+  server:
+    name: "Counter"
+    weight: 100
+    addr: ":19084"
+    etcdTTL: 60
+
+etcd:
+  endpoints:
+    - "localhost:2379"
+  username: root
+  password: "12345678"
+
+redis:
+  addr: "localhost:6379"
+  password: "12345678"
+
+countLevel:
+  low: 0 #轮询低位起始点
+  middle: 3 #轮询中位起始点
+  high: 6 #轮询高位起始点
+  step: 3 #轮询降级与升级步数,即一次更改一级
+
